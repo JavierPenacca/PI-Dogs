@@ -4,12 +4,13 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
     // defino el modelo
     sequelize.define('Temperament', {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoincrement: true,
-            unique: true,
-        },
+        // No es necesario definir el ID ya que sequelize al no encontrarlo lo genera automáticamente
+        // id: {
+        //     type: DataTypes.INTEGER,
+        //     primaryKey: true,
+        //     autoincrement: true,
+        //     unique: true,
+        // },
         name: {
             type: DataTypes.STRING,
             allowNull: false,

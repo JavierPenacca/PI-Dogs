@@ -7,8 +7,9 @@ module.exports = (sequelize) => {
   sequelize.define('Dog', {
     id: {
       type: DataTypes.UUID,
-      primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      primaryKey: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -28,18 +29,26 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    height: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    weight: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-
+		heightMin: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
+		heightMax: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
+		weightMin: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
+		weightMax: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
     createdBd: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
+      allowNull: false,
+      defaultValue: true,
     }
   },
     { freezeTableName: true, timestamps: false }
